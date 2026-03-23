@@ -106,7 +106,6 @@ int main(void)
   MX_TIM4_Init();
   /* USER CODE BEGIN 2 */
   ELRS_Init();
-  Motor_Init();
 
   // 启动中断
   HAL_TIM_IC_Start_IT(&htim1, TIM_CHANNEL_1);  // 启动单脉冲捕获中断
@@ -117,9 +116,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    //UART1接收数据
-    // HAL_UART_Receive_IT(&huart3,&RX,sizeof(RX));
-    // Chassis_Task(1,0, ch4_map ,ch1_map);
+    if (ch5_map == 1792) ctrl_enable = 1;
 
     Chassis_Task(ctrl_enable,ch3_map, ch4_map ,ch1_map);
 
