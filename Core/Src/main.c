@@ -115,8 +115,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-
-    //TIM4已经关闭
+    //团队模式
 
     if (ch5_map == 1792) ctrl_enable = 1;
 
